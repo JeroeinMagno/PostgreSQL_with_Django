@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ student }}"?</p>
+        <button type="submit" class="btn btn-danger">Confirm</button>
+        <a href="{% url 'student_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
